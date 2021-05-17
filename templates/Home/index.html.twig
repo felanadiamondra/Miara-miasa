@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Miara-miasa{% endblock %}
+
+{% block body %}
+    <section id="hero" class="d-flex align-items-center">
+
+    <div class="container-fluid" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1>Créons ensemble l'avenir</h1>
+          <h2>Collaborons tous au même endroit</h2>
+          <div><a href="{{path('app.signin')}}" class="btn-get-started scrollto">Se connecter</a></div>
+        </div>
+        <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
+          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+            <h3>Qui est Miara-miasa? </h3>
+            <p class="font-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <ul>
+              <li><i class="icofont-check-circled"></i>Les entreprises </li>
+              <li><i class="icofont-check-circled"></i> Des etudiants en quêtes d'un stage, ou d'une alternance</li>
+              <li><i class="icofont-check-circled"></i> Les freelancers à la recherche d'un travail</li>
+            </ul>
+            <a href="#" class="read-more">Read More <i class="icofont-long-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+{% endblock %}

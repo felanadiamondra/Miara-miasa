@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Miara-miasa{% endblock %}
+{% form_theme formSignUp 'bootstrap_4_layout.html.twig' %}
+{% form_theme formSignUpPers 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <!-- Menu -->
+    <div class="tab-content">
+      <div class="mb-3 mt-10">
+      <div class="text-center mb-5">
+        <h2> Créer un compte</h2>
+      </div>
+    </div>
+    <div class="nav-wrapper">
+      <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-text" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-text-1-tab" data-toggle="tab" href="#tabs-text-1" role="tab" aria-controls="tabs-text-1" aria-selected="true">Je suis une entreprise</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mb-sm-3 mb-md-0" id="tabs-text-2-tab" data-toggle="tab" href="#tabs-text-2" role="tab" aria-controls="tabs-text-2" aria-selected="false">Je suis un freelancer / etudiant</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card shadow">
+      <div class="card-body">
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="tabs-text-1" role="tabpanel" aria-labelledby="tabs-text-1-tab">
+            <div class="description">
+              <div class="col-lg-12">
+                {{ form_start(formSignUp) }}
+                <div class="form-row">
+                  <div class="col-md-6">
+                    {{ form_row(formSignUp.nom)}}
+                  </div>
+                  <div class="col-md-6">
+                    {{ form_row(formSignUp.category)}}
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6">
+                    {{ form_row(formSignUp.adresse)}}
+                  </div>
+                  <div class="col-md-2">
+                    {{ form_row(formSignUp.code, {'attr': {'placeholder': 'Ex: 101'}})}}
+                  </div>
+                  <div class="col-md-4">
+                    {{ form_row(formSignUp.ville, {'attr': {'placeholder': 'Ex: Antananarivo'}})}}
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-12">
+                    {{ form_row(formSignUp.email)}}
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-12">
+                    {{ form_row(formSignUp.description)}}
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn-default-primary">Enregistrer</button>
+                </div>
+                 
+                {{ form_end(formSignUp) }}
+                {# <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                  <div class="form-row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Nom" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                      <div class="validate"></div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Please enter a valid email" />
+                      <div class="validate"></div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-8 form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Adresse" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                      <div class="validate"></div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Code p" data-rule="email" data-msg="Please enter a valid email" />
+                      <div class="validate"></div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-8 form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Catégorie" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                      <div class="validate"></div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Ville" data-rule="email" data-msg="Please enter a valid email" />
+                      <div class="validate"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Adresse" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                    <div class="validate"></div>
+                  </div>
+                  <div class="form-group">
+                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Description"></textarea>
+                    <div class="validate"></div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                  </div>
+                  <div class="text-center"><button type="submit">Send Message</button></div>
+                </form> #}
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="tabs-text-2" role="tabpanel" aria-labelledby="tabs-text-2-tab">
+            {{ form_start(formSignUpPers) }}
+              {{ form_row(formSignUpPers.bio)}}
+            {{ form_end(formSignUpPers) }}
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+{% endblock %}
