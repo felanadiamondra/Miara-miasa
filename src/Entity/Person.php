@@ -30,6 +30,20 @@ class Person
     /**
      * @ORM\Column(type="string", length=50)
      */
+    private $username;
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $password;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $cpassword;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
     private $type;
 
     /**
@@ -82,6 +96,39 @@ class Person
     public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
+
+        return $this;
+    }
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+    public function getConfirmpass(): ?string
+    {
+        return $this->cpassword;
+    }
+
+    public function setConfirmpass(string $cpassword): self
+    {
+        $this->cpassword = $cpassword;
 
         return $this;
     }

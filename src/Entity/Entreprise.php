@@ -41,6 +41,18 @@ class Entreprise
     private $Ville;
 
     /**
+     * @ORM\Column(type="string", length=50)
+     * @Assert\Length(min="8", minMessage="Password must have 8 characters")
+     * @Assert\EqualTo(propertyPath="confirmpass", message="Two password doesn't match")
+     */
+
+    private $Password;
+    /**
+     * @Assert\EqualTo(propertyPath="Password", message="Two password doesn't match")
+     */
+    private $confirmpass; // confirm password n'a rien avoir avec la base de onnée donc pas de @ORM
+
+    /**
      * @ORM\Column(type="text")
      */
     private $Description;
@@ -105,6 +117,28 @@ class Entreprise
     public function setVille(string $Ville): self
     {
         $this->Ville = $Ville;
+
+        return $this;
+    }
+    public function getPassword(): ?string
+    {
+        return $this->Password;
+    }
+
+    public function setPassword(string $Password): self
+    {
+        $this->Password = $Password;
+
+        return $this;
+    }
+    public function getConfirmpass(): ?string
+    {
+        return $this->confirmpass;
+    }
+
+    public function setConfirmpass(string $cpassword): self
+    {
+        $this->confirmpass = $cpassword;
 
         return $this;
     }
